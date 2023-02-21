@@ -112,6 +112,18 @@ body {
   }
 }
 
+@keyframes moveBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .btn {
   text-transform: uppercase;
   text-decoration: none;
@@ -119,6 +131,12 @@ body {
   padding: 15px 40px;
   border-radius: 100px;
   transition: all 0.2s;
+  position: relative;
+}
+
+.btn-animated {
+  animation: moveBottom 1s ease-out 0.75s;
+  animation-fill-mode: backwards; /* aplikuje stav z 0% animace pred jejim zacatkem, cudl by byl videt */
 }
 
 .btn:hover {
@@ -134,4 +152,26 @@ body {
 .btn-orange {
   background-color: #fb8500;
   color: #fff;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-orange::after {
+  background-color: #fb8500;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.7);
+  opacity: 0;
 }
