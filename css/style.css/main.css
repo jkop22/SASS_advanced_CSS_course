@@ -28,17 +28,14 @@ body {
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
-
 .header__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
-
 .header__logo {
   height: 3.5rem;
 }
-
 .header__text-box {
   position: absolute;
   text-align: center;
@@ -53,7 +50,6 @@ body {
   /* backface-visibility: hidden; asi uz neni potreba - opravovalo to driv "cukaci" bug u animaci */
   margin-bottom: 6rem;
 }
-
 .heading-primary--main {
   display: block;
   font-size: 6rem;
@@ -61,7 +57,6 @@ body {
   letter-spacing: 3.5rem;
   animation: moveLeft 1s ease-out;
 }
-
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
@@ -116,27 +111,29 @@ body {
   position: relative;
   font-size: 1.6rem;
 }
-
 .btn--animated {
   animation: moveBottom 1s ease-out 0.75s;
   animation-fill-mode: backwards; /* aplikuje stav z 0% animace pred jejim zacatkem, cudl by byl videt */
 }
-
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
-
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.7);
+  opacity: 0;
+}
 .btn:active {
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
-
 .btn--orange {
   background-color: #fb8500;
   color: #fff;
 }
-
+.btn--orange::after {
+  background-color: #fb8500;
+}
 .btn::after {
   content: "";
   display: inline-block;
@@ -148,13 +145,4 @@ body {
   left: 0;
   z-index: -1;
   transition: all 0.4s;
-}
-
-.btn--orange::after {
-  background-color: #fb8500;
-}
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.7);
-  opacity: 0;
 }/*# sourceMappingURL=main.css.map */
