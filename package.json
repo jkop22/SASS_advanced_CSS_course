@@ -1,0 +1,19 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "uceni SASS",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkop22/SASS_advanced_CSS_course.git"
+  },
+  "author": "-jk-",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jkop22/SASS_advanced_CSS_course/issues"
+  },
+  "homepage": "https://github.com/jkop22/SASS_advanced_CSS_course#readme"
+}
