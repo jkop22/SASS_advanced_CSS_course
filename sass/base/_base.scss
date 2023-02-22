@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit; /* dedicny element */
+}
+
+html {
+  font-size: 62.5%; /* pro jednodussi prepocitavani px na remy */
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7; /* vyska radku je 1,7x vyssi nez defaultni */
+  color: $color-grey-dark;
+  padding: 3rem; /* padding se nededi - plati pouze pro body */
+  box-sizing: border-box; /* border a paddingy se nepricitaji k celkovym rozmerum elementu */
+}
