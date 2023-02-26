@@ -8,6 +8,9 @@
   position: relative;
   font-size: 1.6rem;
 
+  border: none;
+  cursor: pointer;
+
   &--animated {
     animation: moveBottom 1s ease-out 0.75s;
     animation-fill-mode: backwards; /* aplikuje stav z 0% animace pred jejim zacatkem, cudl by byl videt */
