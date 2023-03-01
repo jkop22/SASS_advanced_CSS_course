@@ -12,3 +12,43 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+// MEDIA QUERY MANAGER
+/*
+0-600px: phone
+600-900px: tablet portrait
+900-1200px: tablet landscape
+1200-1800 - zde se uplatní námi napsané základní styly
+1800+: big screens
+
+600px = 37.5em, 900px = 56.25em, 1200px = 75em, 1800px = 112,5em
+
+breakpoint arguments:
+- phone
+- tab-port
+- tab-land
+- big-size
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == big-size {
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
+}

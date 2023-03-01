@@ -7,8 +7,21 @@
 }
 
 html {
-  font-size: 62.5%; /* pro jednodussi prepocitavani px na remy */
+  font-size: 62.5%; /* pro jednodussi prepocitavani px na remy (1rem je 10px) */
   scroll-behavior: smooth;
+
+  @include respond(tab-land) {
+    font-size: 56.25%; //9px
+  }
+  @include respond(tab-port) {
+    font-size: 50%; //8px
+  }
+  // @include respond(phone) {
+  //   font-size: 37.5%; //6px
+  // }
+  @include respond(big-size) {
+    font-size: 75%; //12px
+  }
 }
 
 body {
@@ -19,4 +32,8 @@ body {
   color: $color-grey-dark;
   padding: 3rem; /* padding se nededi - plati pouze pro body */
   box-sizing: border-box; /* border a paddingy se nepricitaji k celkovym rozmerum elementu */
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
