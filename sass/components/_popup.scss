@@ -4,11 +4,16 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba($color-black, 0.8);
   z-index: 700;
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s;
+  background-color: rgba($color-black, 0.8);
+
+  @supports (backdrop-filter: blur(10px)) {
+    backdrop-filter: blur(10px);
+    background-color: rgba($color-black, 0.2);
+  }
 
   &:target {
     opacity: 1;
